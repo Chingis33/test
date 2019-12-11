@@ -1,4 +1,5 @@
 <?php
+
 require_once 'SiteItem.class.php';
 
 class SpiderCgiBook108
@@ -34,7 +35,6 @@ class SpiderCgiBook108
     }
 
     /**
-     * @param SiteItem $siteItem
      * @param string $xml
      */
     public function parseInmate($xml)
