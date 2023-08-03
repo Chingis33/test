@@ -32,7 +32,7 @@ class ProxyQueriesManager
     public function getTable(DataTablesQuery $dataTablesQuery, array $settings)
     {
         $sql = "SELECT datetime, a.user, query, server, duration, from_cache, count(*) OVER() AS full_count 
-            FROM adgo_proxy_queries a
+            FROM proxy_queries a
             WHERE *WHERE*
             ORDER BY *ORDER*
             LIMIT *LIMITS*
@@ -119,7 +119,7 @@ class ProxyQueriesManager
     public function getServers()
     {
         return $this->mainDb->select("
-            SELECT DISTINCT server from adgo_proxy_queries
+            SELECT DISTINCT server from proxy_queries
         ") ?: [];
     }
 
@@ -129,7 +129,7 @@ class ProxyQueriesManager
     public function getUsers()
     {
         return $this->mainDb->select("
-            SELECT DISTINCT a.user from adgo_proxy_queries a
+            SELECT DISTINCT a.user from proxy_queries a
         ") ?: [];
     }
 }
